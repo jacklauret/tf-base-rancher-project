@@ -127,12 +127,12 @@ variable "project_requests_cpu" {
   }
 }
 
-variable "kubernetes_cpu_limit" {
+variable "namespace_default_limits_cpu" {
   description = "CPU limit für Kubernetes (z.B. 500m, 1 oder null)"
   type        = string
   default     = null
   validation {
-    condition     = var.kubernetes_cpu_limit == null || can(regex("^([1-9][0-9]*m?|0\\.[0-9]+)$", var.kubernetes_cpu_limit))
+    condition     = var.namespace_default_limits_cpu == null || can(regex("^([1-9][0-9]*m?|0\\.[0-9]+)$", var.namespace_default_limits_cpu))
     error_message = "CPU limit muss null oder eine positive Zahl sein, z.B. '500m' oder '1'."
   }
 }
