@@ -36,7 +36,7 @@ variable "container_resource_limit_requests_cpu" {
     default = null
     nullable = true
   validation {
-    condition     = var.kubernetes_cpu_limit == null || can(regex("^([1-9][0-9]*m?|0\\.[0-9]+)$", var.container_resource_limit_requests_cpu))
+    condition     = var.container_resource_limit_requests_cpu == null || can(regex("^([1-9][0-9]*m?|0\\.[0-9]+)$", var.container_resource_limit_requests_cpu))
     error_message = "CPU limit muss eine positive Zahl sein, z.B. '500m' oder '1'."
   }
 }
@@ -46,7 +46,7 @@ variable "container_resource_limit_limits_cpu" {
     default = null
     nullable = true
   validation {
-    condition     = var.kubernetes_cpu_limit == null || can(regex("^([1-9][0-9]*m?|0\\.[0-9]+)$", var.container_resource_limit_limits_cpu))
+    condition     = var.container_resource_limit_limits_cpu == null || can(regex("^([1-9][0-9]*m?|0\\.[0-9]+)$", var.container_resource_limit_limits_cpu))
     error_message = "CPU limit muss eine positive Zahl sein, z.B. '500m' oder '1'."
   }
 }
@@ -112,7 +112,7 @@ variable "project_limits_cpu" {
     nullable = true
     default = null
   validation {
-    condition     = var.kubernetes_cpu_limit == null || can(regex("^([1-9][0-9]*m?|0\\.[0-9]+)$", var.project_limits_cpu))
+    condition     = var.project_limits_cpu == null || can(regex("^([1-9][0-9]*m?|0\\.[0-9]+)$", var.project_limits_cpu))
     error_message = "CPU limit muss eine positive Zahl sein, z.B. '500m' oder '1'."
   }
 }
