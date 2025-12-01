@@ -26,7 +26,7 @@ variable "target_cluster_name" {
 
 }
 
-variable "projekt_name" {
+variable "project_name" {
   type = string
   description = "Name of the project"
 }

@@ -9,7 +9,7 @@ data "rancher2_cluster_v2" "cluster" {
 ####################################################################
 
 resource "rancher2_project" "rancher_project" {
-  name       = var.projekt_name
+  name       = var.project_name
   cluster_id = data.rancher2_cluster_v2.cluster.cluster_v1_id
   container_resource_limit {
     requests_cpu = var.container_resource_limit_requests_cpu
